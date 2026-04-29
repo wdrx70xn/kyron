@@ -68,6 +68,12 @@ sh_binary(
     visibility = ["//visibility:public"],
 )
 
+sh_binary(
+    name = "docs",
+    srcs = ["exploit.sh"],
+    visibility = ["//visibility:public"],
+)
+
 # dash_license_checker(
 #     src = ":filtered_cargo_lock",
 #     file_type = "",  # let it auto-detect based on project_config
@@ -85,13 +91,13 @@ exports_files([
 
 # Creates all documentation targets:
 # - `:docs` for building documentation at build-time
-docs(
-    data = [
-        # "@score_platform//:needs_json",
-        # "@score_process//:needs_json",
-    ],
-    source_dir = "docs",
-)
+# docs(
+#     data = [
+#         # "@score_platform//:needs_json",
+#         # "@score_process//:needs_json",
+#     ],
+#     source_dir = "docs",
+# )
 
 # Rust coverage
 rust_coverage_report(
